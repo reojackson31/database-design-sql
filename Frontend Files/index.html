@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udemy Demo Webpage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: lavender; /* Light Purple Background */
+        }
+
+        header {
+            background-color: #6B3E91; /* Dark Purple Header */
+            color: white;
+            padding: 20px 10px; /* Adjusted padding for increased height */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .content-box {
+            width: 500px; /* Increased width */
+            height: 200px; /* Increased height */
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Increased gap between buttons */
+            margin-top: 15px;
+        }
+
+        .btn {
+            width: 200px; /* Reduced width */
+            padding: 10px;
+            background-color: #6B3E91;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 auto; /* Center align within container */
+        }
+
+        .btn:hover {
+            background-color: #491E6D;
+        }
+
+        h1 {
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="https://community.udemy.com/t5/image/serverpage/image-id/5267i07ADA4BE049629C1?v=v2" alt="Udemy Logo">
+        <h1>WELCOME TO UDEMY DEMO WEBPAGE</h1>
+    </header>
+    <div class="content-box">
+        <h2>Select Your Role</h2>
+        <div class="btn-container">
+            <a class="btn" href="student.html">Student</a>
+            <a class="btn" href="admin.html">Admin</a>
+        </div>
+    </div>
+</body>
+</html>

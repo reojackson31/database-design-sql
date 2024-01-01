@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udemy Search Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: lavender; /* Light Purple Background */
+        }
+
+        header {
+            background-color: #6B3E91; /* Dark Purple Header */
+            color: white;
+            padding: 20px 10px; /* Adjusted padding for increased height */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .content-box {
+            width: 500px; /* Increased width */
+            height: 400px; /* Increased height */
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Increased gap between buttons */
+            margin-top: 15px;
+        }
+
+        .btn {
+            width: 200px; /* Reduced width */
+            padding: 10px;
+            background-color: #6B3E91;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 auto; /* Center align within container */
+        }
+
+        .btn:hover {
+            background-color: #491E6D;
+        }
+
+        h1 {
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .search-form {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 400px;
+        }
+
+        .search-btn {
+            margin-top: 10px;
+            background-color: #6B3E91;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .search-btn:hover {
+            background-color: #491E6D;
+        }
+
+.input-box {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 250px; /* Adjust the width as needed */
+    margin-bottom: 10px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="https://community.udemy.com/t5/image/serverpage/image-id/5267i07ADA4BE049629C1?v=v2" alt="Udemy Logo">
+        <h1>WELCOME TO UDEMY STUDENT PORTAL</h1>
+    </header>
+    <div class="content-box">
+        <h2>What Are You Looking For?</h2>
+        <form class="search-form" action="student_queries.php" method="POST">
+            <select id="dropdown" name="selected_option" onchange="showOption()">
+                <option value='q0'>Select</option>
+                <option value='q1'>Search for courses, instructors, categories</option>
+                <option value="q2">Sort and Filter Courses</option>
+                <option value="q3">Explore All Courses</option>
+                <option value="q4">Top Categories Recommended for You</option>
+                <option value="q5">Find Courses by Category</option>
+                <option value="q6">Explore Course Instructors</option>
+                <option value="q7">View your Student Profile</option>
+            </select>
+
+            <!-- Option 1 - Search -->
+            <div class="text-input" id="option1" style="display: none;">
+                <br><input class="input-box" type="text" id="search_text" name="search_text" placeholder="Enter search keyword here">
+            </div>
+
+            <!-- Option 2 - Sort and Filter -->
+            <div class="text-input" id="option2" style="display: none;">
+                <br><input class="input-box" type="number" id="min_price" name="min_price" placeholder="Enter Min Price">
+                <input class="input-box" type="number" id="max_price" name="max_price" placeholder="Enter Max Price">
+                <br><select id="language" name="language">
+                    <option value="">Select Course Language</option>
+        	<option value="English">English</option>
+        	<option value="French">French</option>
+            </select>    
+            <br><br><select id="category_filter" name="category_filter">
+                    <option value="">Select the course category</option>
+                    <option value="Programming">Programming</option>
+        	        <option value="Design">Design</option>
+                    <option value="Analytics">Analytics</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Business">Business</option>
+                    <option value="Music">Music</option>
+                    <option value="Art">Art</option>
+                    <option value="Literature">Literature</option>
+                    <option value="Science">Science</option>
+                    <option value="History">History</option>
+                </select>
+            </div>
+
+            <!-- Option 3 - Explore All Courses (No textbox required) -->
+
+            <!-- Option 4 - Top Categories Recommended for You -->
+            <div class="text-input" id="option4" style="display: none;">
+                <br><input class="input-box" type="number" id="age" name="age" placeholder="Enter your Age">
+                <br><select id="education" name="education">
+                    <option value="">Select Your Education level</option>
+        	<option value="Bachelors">Bachelors</option>
+        	<option value="Masters">Masters</option>
+                <option value="Phd">Phd</option>
+                </select>
+                <br><br><select id="region" name="region">
+                    <option value="">Select Region</option>
+                    <option value="Asia">Asia</option>
+        	    <option value="Africa">Africa</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Australia">Australia</option>
+                    <option value="North America">North America</option>
+                    <option value="South America">South America</option>
+                </select>
+            </div>
+
+            <!-- Option 5 - Find Courses and Instructors by Category -->
+            <div class="text-input" id="option5" style="display: none;">
+                <br><select id="category" name="category">
+                    <option value="">Select the course category</option>
+                    <option value="Programming">Programming</option>
+        	    <option value="Design">Design</option>
+                    <option value="Analytics">Analytics</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Business">Business</option>
+                    <option value="Music">Music</option>
+                    <option value="Art">Art</option>
+                    <option value="Literature">Literature</option>
+                    <option value="Science">Science</option>
+                    <option value="History">History</option>
+                </select>
+                </select>
+            </div>
+
+            <!-- Option 6 - Explore Course Instructors (No textbox required) -->
+
+            <!-- Option 7 - View your Student Profile -->
+            <div class="text-input" id="option7" style="display: none;">
+                <br><input class="input-box" type="text" id="student_id" name="student_id" placeholder="Enter your student id">
+            </div>
+
+            <button class="search-btn" type="submit">GO</button>
+        </form>
+    </div>
+    <br><br>
+    <a href="index.html">Go back to Homepage</a>
+
+    <script>
+        function showOption() {
+            var selectedOption = document.getElementById("dropdown").value;
+            var option1 = document.getElementById("option1");
+            var option2 = document.getElementById("option2");
+            var option4 = document.getElementById("option4");
+            var option5 = document.getElementById("option5");
+            var option7 = document.getElementById("option7");
+
+            option1.style.display = (selectedOption === "q1") ? "block" : "none";
+            option2.style.display = (selectedOption === "q2") ? "block" : "none";
+            option4.style.display = (selectedOption === "q4") ? "block" : "none";
+            option5.style.display = (selectedOption === "q5") ? "block" : "none";
+            option7.style.display = (selectedOption === "q7") ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
