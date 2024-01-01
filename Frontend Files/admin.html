@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udemy Search Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: lavender; /* Light Purple Background */
+        }
+
+        header {
+            background-color: #6B3E91; /* Dark Purple Header */
+            color: white;
+            padding: 20px 10px; /* Adjusted padding for increased height */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .content-box {
+            width: 500px; /* Increased width */
+            height: 200px; /* Increased height */
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Increased gap between buttons */
+            margin-top: 15px;
+        }
+
+        .btn {
+            width: 200px; /* Reduced width */
+            padding: 10px;
+            background-color: #6B3E91;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 auto; /* Center align within container */
+        }
+
+        .btn:hover {
+            background-color: #491E6D;
+        }
+
+        h1 {
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .search-form {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 400px;
+        }
+
+        .search-btn {
+            margin-top: 10px;
+            background-color: #6B3E91;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .search-btn:hover {
+            background-color: #491E6D;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="https://community.udemy.com/t5/image/serverpage/image-id/5267i07ADA4BE049629C1?v=v2" alt="Udemy Logo">
+        <h1>WELCOME TO UDEMY ADMIN PORTAL</h1>
+    </header>
+    <div class="content-box">
+        <h2>What Are You Looking For?</h2>
+        <form class="search-form" action="admin_queries.php" method="POST">
+            <select id="dropdown" name="selected_option">
+                <option value='q8'>Customer Retention Rate</option>
+                <option value="q9">Past Education Level Correlations</option>
+                <option value="q10">Course Price Sensitivity</option>
+                <option value="q11">Free to Paid Conversation Rate</option>
+                <option value="q12">Course Sharing Mediums</option>
+                <option value="q13">Course Enrollments Per Semester</option>
+                <option value="q14">Course Length and Completion Rate Correlation</option>
+                <option value="q15">View Important Customers</option>
+                <option value="q16">Class Enrollment Rate</option>
+                <option value="q17">Bestseller Course Per Category</option>
+                <option value="q18">Gift Card Recipient Purchases</option>
+                <option value="q19">Average Time for Completion</option>
+                <option value="q20">Instructor Course Analysis</option>
+            </select>
+            <button class="search-btn" type="submit">GO</button>
+        </form>
+    </div>
+<br><br>
+    <a href="index.html">Go back to Homepage</a>
+</body>
+</html>
